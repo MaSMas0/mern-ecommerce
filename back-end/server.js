@@ -1,9 +1,12 @@
-const express = require ('express')
-const products = require('./data/products')
-var cors = require('cors')
+import express from 'express'
+import products from './data/products.js'
+import cors from 'cors'
+import { config } from 'dotenv'
+
+config()
 
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
 
 app.use(cors())
 
@@ -25,6 +28,6 @@ app.get('/api/products/:id', (req,res)=>{
 
 
 app.listen(port,
-    console.log(`Server is up and running on http://localhost:${port}`)
+    console.log(`Server is up and running in ${process.env.NODE_ENV} on http://localhost:${port}`)
 )
 

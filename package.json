@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "MERN E-Commerce App",
   "main": "server.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node back-end/server.js",
-    "dev": "nodemon back-end/server.js"
+    "server": "nodemon back-end/server.js",
+    "client": "npm start --prefix front-end",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "MERN",
@@ -18,9 +21,11 @@
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "nodemon": "^2.0.18"
   }
 }
