@@ -1,0 +1,25 @@
+{
+  "name": "e-commerce_using_mern_technology",
+  "version": "1.0.0",
+  "description": "MERN E-Commerce App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node back-end/server.js",
+    "dev": "nodemon back-end/server.js"
+  },
+  "keywords": [
+    "MERN",
+    "E-Commerce",
+    "Shopping",
+    "Cart"
+  ],
+  "author": "Mohamed Abd El-Samie Mansour",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
