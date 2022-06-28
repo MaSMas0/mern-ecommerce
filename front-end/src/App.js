@@ -1,9 +1,10 @@
 
 import { Container } from "react-bootstrap";
-
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 import Header  from "./components/Header";
 import Footer  from "./components/Footer";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage"
 import { useState } from "react";
 
 const App = () => {
@@ -90,15 +91,18 @@ const App = () => {
   ])
 
   return (
-<>
+<Router>
 <Header />
 <main className="py-3">
   <Container>
-<Home products={products} />
+    <Routes>
+<Route path="/" element ={<HomePage products={products} />} />
+<Route path="/product/:id" element ={<ProductPage products={products}/>} />
+</Routes>
   </Container>
 </main>
 <Footer />
-</>
+</Router>
 );
 }
 
