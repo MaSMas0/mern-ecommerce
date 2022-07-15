@@ -1,4 +1,4 @@
-import { cartAddItem, cartRemoveItem } from "../reducers/CartSlice";
+import { cartAddItem, cartRemoveItem } from "../../reducers/Cart/CartSlice";
 import axios from "axios";
 
 export const addToCart = (id, qty) => {

@@ -11,7 +11,7 @@ import {
   FormSelect,
 } from "react-bootstrap";
 import Message from "../components/Message";
-import { addToCart, removeFromCart } from "../actions/CartAction";
+import { addToCart, removeFromCart } from "../actions/Cart/CartAction";
 
 const CartScreen = () => {
   const { id } = useParams();

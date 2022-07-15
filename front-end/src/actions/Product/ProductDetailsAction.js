@@ -2,7 +2,7 @@ import {
   productDetailsFail,
   productDetailsRequest,
   productDetailsSuccess,
-} from "../reducers/ProductDetailsSlice";
+} from "../../reducers/Product/ProductDetailsSlice";
 import axios from "axios";
 
 export const DetailsOfProduct = (id) => {

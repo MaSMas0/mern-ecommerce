@@ -2,7 +2,7 @@ import {
   productListRequest,
   productListSuccess,
   productListFail,
-} from "../reducers/ProductListSlice";
+} from "../../reducers/Product/ProductListSlice";
 import axios from "axios";
 
 export const listProducts = () => async (dispatch) => {

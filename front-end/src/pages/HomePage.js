@@ -5,7 +5,7 @@ import Message from "../components/Message";
 import Product from "../components/Product";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "../actions/ProductListAction";
+import { listProducts } from "../actions/Product/ProductListAction";
 
 function Home() {
   const dispatch = useDispatch();
