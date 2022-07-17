@@ -1,4 +1,4 @@
-import { cartAddItem, cartRemoveItem } from "../../reducers/Cart/CartSlice";
+import { cartAddItem, cartRemoveItem,cartSaveShippingAddress,cartSavePaymentMethod } from "../../reducers/Cart/CartSlice";
 import axios from "axios";
 
 export const addToCart = (id, qty) => {
@@ -26,6 +26,26 @@ export const removeFromCart = (id, qty) => {
     localStorage.setItem(
       "cartItems",
       JSON.stringify(getState().cart.cartItems)
+    );
+  };
+};
+
+
+export const saveShippingAddress = (data) => {
+  return async (dispatch) => {
+    dispatch(cartSaveShippingAddress(data));
+    localStorage.setItem(
+      "shippingAddress",
+      JSON.stringify(data)
+    );
+  };
+};
+export const savePaymentMethod = (data) => {
+  return async (dispatch) => {
+    dispatch(cartSavePaymentMethod(data));
+    localStorage.setItem(
+      "paymentMethod",
+      JSON.stringify(data)
     );
   };
 };
