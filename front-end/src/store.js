@@ -6,6 +6,7 @@ import UserLoginReducer from "./reducers/User/UserLoginSlice";
 import UserRegisterReducer from "./reducers/User/UserRegisterSlice";
 import UserDetailsReducer from "./reducers/User/UserDetailsSlice";
 import UserUpdateProfileReducer from "./reducers/User/UserUpdateProfileSlice";
+import OrderReducer from "./reducers/Order/OrderSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,7 +16,8 @@ const store = configureStore({
     userLogin: UserLoginReducer,
     userRegister:UserRegisterReducer,
     userDetails:UserDetailsReducer,
-    userUpdateProfile:UserUpdateProfileReducer
+    userUpdateProfile:UserUpdateProfileReducer,
+    orderCreate:OrderReducer,
   },
 });
 
