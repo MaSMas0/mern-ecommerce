@@ -20,7 +20,7 @@ export const addToCart = (id, qty) => {
     );
   };
 };
-export const removeFromCart = (id, qty) => {
+export const removeFromCart = (id) => {
   return async (dispatch, getState) => {
     dispatch(cartRemoveItem(id));
     localStorage.setItem(

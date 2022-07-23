@@ -23,11 +23,12 @@ export const userDetailsSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    userDetailsReset: () => ({ user:{}}),
   },    
 });
 
 // Action creators are generated for each case reducer function
-export const { userDetailsRequest, userDetailsSuccess, userDetailsFail } =
+export const { userDetailsRequest, userDetailsSuccess, userDetailsFail,userDetailsReset } =
 userDetailsSlice.actions;
 
 export default userDetailsSlice.reducer;

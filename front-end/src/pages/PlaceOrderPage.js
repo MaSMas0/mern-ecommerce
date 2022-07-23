@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/Order/OrderActions'
-
+import { orderCreateReset } from '../reducers/Order/OrderSlice'
+import { userDetailsReset } from '../reducers/User/UserDetailsSlice'
 
 
 const PlaceOrderPage = () => {
@@ -25,9 +26,11 @@ const PlaceOrderPage = () => {
   useEffect(() => {
     if (success) {
       navigate(`/order/${order._id}`)
+      dispatch(userDetailsReset())
+      dispatch(orderCreateReset())
     }
     // eslint-disable-next-line
-  }, [history, success])
+  }, [navigate, success])
 
 
   const placeOrderHandler = () => {
@@ -89,7 +92,7 @@ const PlaceOrderPage = () => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ${item.price} = ${cart.itemsPrice}
                         </Col>
                       </Row>
                     </ListGroup.Item>

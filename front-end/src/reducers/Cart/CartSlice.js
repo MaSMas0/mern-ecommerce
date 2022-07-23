@@ -46,7 +46,7 @@ export const CartSlice = createSlice({
       state.itemsPrice = state.cartItems.reduce(
         (acc, item) => acc + item.price * item.qty,
         0
-      );
+      ).toFixed(2);
       state.shippingPrice = state.itemsPrice > 100 ? 0 : 20
       state.taxPrice = (Number((0.14 * state.itemsPrice)).toFixed(2))
       state.totalPrice = (
@@ -54,6 +54,9 @@ export const CartSlice = createSlice({
             Number(state.shippingPrice) +
             Number(state.taxPrice)
           ).toFixed(2)
+    },
+    cartClearItems: (state) => {
+      state.cartItems=[]
     },
   },
 });
@@ -64,6 +67,7 @@ export const {
   cartRemoveItem,
   cartSaveShippingAddress,
   cartSavePaymentMethod,
+  cartClearItems
 } = CartSlice.actions;
 
 export default CartSlice.reducer;

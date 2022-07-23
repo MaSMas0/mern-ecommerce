@@ -1,16 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  product: {},
+  product: {reviews:[]},
 };
 
 export const ProductDetailsSlice = createSlice({
   name: "productDetails",
   initialState,
   reducers: {
-    productDetailsRequest: (state, action) => {
+    productDetailsRequest: (state) => {
       state.loading = true;
-      state.product = {};
     },
     productDetailsSuccess: (state, action) => {
       state.loading = false;

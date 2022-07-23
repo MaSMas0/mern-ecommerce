@@ -22,11 +22,12 @@ export const userUpdateProfileSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    userUpdateProfileReset: () =>({})
   },    
 });
 
 // Action creators are generated for each case reducer function
-export const { userUpdateProfileRequest, userUpdateProfileSuccess, userUpdateProfileFail } =
+export const { userUpdateProfileRequest, userUpdateProfileSuccess, userUpdateProfileFail,userUpdateProfileReset } =
 userUpdateProfileSlice.actions;
 
 export default userUpdateProfileSlice.reducer;
