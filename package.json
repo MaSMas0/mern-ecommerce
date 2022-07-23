@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node back-end/seeder",
     "data:destroy": "node back-end/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --force --prefix front-end && npm run build --prefix front-end"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --legacy-peer-deps --prefix front-end && npm run build --prefix front-end"
   },
   "keywords": [
     "MERN",
