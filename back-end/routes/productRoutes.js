@@ -8,10 +8,12 @@ import {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getAllProductsForMobile,
 } from '../controllers/productController.js'
 import { auth, admin } from '../middleware/authMiddleware.js'
 
 router.route('/').get(getProducts).post(auth, admin, createProduct)
+router.get('/mobile',getAllProductsForMobile)
 router.route('/:id/reviews').post(auth, createProductReview)
 router.get('/top', getTopProducts)
 router
