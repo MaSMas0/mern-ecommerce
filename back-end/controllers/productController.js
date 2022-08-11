@@ -25,6 +25,14 @@ const getProducts = asyncHandler(async (req, res) => {
 
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
+// @desc    Fetch all products
+// @route   GET /api/products
+// @access  Public
+const getAllProductsForMobile = asyncHandler(async (req, res) => {
+  const products = await Product.find()
+
+  res.json({ products })
+})
 
 // @desc    Fetch single product
 // @route   GET /api/products/:id
@@ -65,6 +73,7 @@ const createProduct = asyncHandler(async (req, res) => {
     user: req.user._id,
     image: '/images/sample.jpg',
     brand: 'Sample brand',
+    brandImage: '/images/sample.jpg',
     category: 'Sample category',
     countInStock: 0,
     numReviews: 0,
@@ -85,6 +94,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     description,
     image,
     brand,
+    brandImage,
     category,
     countInStock,
   } = req.body
@@ -97,6 +107,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.description = description
     product.image = image
     product.brand = brand
+    product.brandImage = brandImage
     product.category = category
     product.countInStock = countInStock
 
@@ -166,4 +177,5 @@ export {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getAllProductsForMobile,
 }
