@@ -18,6 +18,7 @@ const ProductEditScreen = () => {
   const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
   const [brand, setBrand] = useState('')
+  const [brandImage, setBrandImage] = useState('')
   const [category, setCategory] = useState('')
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
@@ -47,6 +48,7 @@ const ProductEditScreen = () => {
         setPrice(product.price)
         setImage(product.image)
         setBrand(product.brand)
+        setBrandImage(product.brandImage)
         setCategory(product.category)
         setCountInStock(product.countInStock)
         setDescription(product.description)
@@ -86,6 +88,7 @@ const ProductEditScreen = () => {
         price,
         image,
         brand,
+        brandImage,
         category,
         description,
         countInStock,
@@ -153,6 +156,23 @@ const ProductEditScreen = () => {
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='brandImage'>
+              <Form.Label>brandImage</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter brand Image url'
+                value={brandImage}
+                onChange={(e) => setImage(e.target.value)}
+              ></Form.Control>
+              <Form.Control type="file"
+                id='image-file'
+                label='Choose File'
+                custom
+                onChange={uploadFileHandler}
+              />
+              {uploading && <Loader />}
             </Form.Group>
 
             <Form.Group controlId='countInStock'>
