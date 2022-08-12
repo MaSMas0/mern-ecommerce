@@ -164,10 +164,10 @@ const ProductEditScreen = () => {
                 type='text'
                 placeholder='Enter brand Image url'
                 value={brandImage}
-                onChange={(e) => setImage(e.target.value)}
+                onChange={(e) => setBrandImage(e.target.value)}
               ></Form.Control>
               <Form.Control type="file"
-                id='image-file'
+                id='brand-image-file'
                 label='Choose File'
                 custom
                 onChange={uploadFileHandler}
